@@ -1,6 +1,7 @@
 var bech32 = require('./crypto/bech32');
 var base58 = require('./crypto/base58');
 var cryptoUtils = require('./crypto/utils');
+const Buffer = require('buffer/').Buffer
 const { addressType } = require('./crypto/utils');
 
 var DEFAULT_NETWORK_TYPE = 'prod';
@@ -141,7 +142,7 @@ function isValidSegwitAddress(address, currency, networkType) {
 }
 
 module.exports = {
-    isValidAddress: function (address, currency, networkType) {        
+    isValidAddress: function (address, currency, networkType) {
         networkType = networkType || DEFAULT_NETWORK_TYPE;
         const addrType = this.getAddressType(address, currency, networkType);
         // Though WITNESS_UNKNOWN is a valid address, it's not spendable - so we mark it as invalid

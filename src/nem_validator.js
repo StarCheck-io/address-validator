@@ -1,5 +1,6 @@
 const { addressType } = require('../src/crypto/utils');
 var cryptoUtils = require('./crypto/utils');
+const Buffer = require('buffer/').Buffer
 
  /**
 * Check if an address is valid

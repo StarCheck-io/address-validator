@@ -6,6 +6,7 @@ var base58 = require('./base58');
 var base32 = require('./base32');
 var BigNum = require('browserify-bignum');
 var groestl = require('groestl-hash-js');
+const Buffer = require('buffer/').Buffer
 
 // Address types, compatible with Trezor
 const addressType = {

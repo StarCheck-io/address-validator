@@ -1,5 +1,6 @@
 const { addressType } = require('../src/crypto/utils');
 var cryptoUtils = require('./crypto/utils');
+const Buffer = require('buffer/').Buffer
 
 var regexp = new RegExp('^[0-9]{1,20}L$');
 
