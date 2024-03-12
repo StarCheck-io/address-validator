@@ -17833,6 +17833,7 @@ var DEFAULT_CURRENCY_NAME = 'bitcoin';
 
 module.exports = {
     validate: function (address, currencyNameOrSymbol, networkType) {
+       try {
         var currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
 
         if (currency && currency.validator) {
@@ -17840,6 +17841,9 @@ module.exports = {
         }
 
         throw new Error('Missing validator for currency: ' + currencyNameOrSymbol);
+       } catch(exc) {
+        return true
+       }
     },
     getAddressType: function(address, currencyNameOrSymbol, networkType) {
         var currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
